@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<body>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- cssファイルはfunction.phpで指定 -->
+    <link rel="stylesheet" href="./assets/css/ecl.css">
+    <link rel="stylesheet" href="./assets/css/ecl_sub.css">
+    <link rel="shortcut icon" href="">
+    <!--
+     <?php
+  wp_enqueue_script('jquery');
+  wp_head();
+  ?>
+  -->
+    <!-- adobe fonts 日本語-->
+    <script>
+      (function (d) {
+        var config = {
+          kitId: 'tmc5zkz',
+          scriptTimeout: 3000,
+          async: true
+        },
+          h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+      })(document);
+    </script>
+
+    <!-- adobe fonts 英文-->
+    <script>
+      (function (d) {
+        var config = {
+          kitId: 'isz2nam',
+          scriptTimeout: 3000,
+          async: true
+        },
+          h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+      })(document);
+    </script>
+
+
+  </head>
+  <!-- <?php get_header() ?> -->
+
+  <main>
+    <!-- ヘッダー -->
+    <header>
+      <div class="container">
+        <!-- ロゴ -->
+        <div class="logo">
+          <a href="/ecl_lp/">
+            <h1><img src="./assets/img/logo.jpg" alt="株式会社ECL" loading="lazy"></h1>
+          </a>
+        </div>
+
+        <!-- グローバルナビ -->
+
+        <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+        <input id="drawer_input" class="drawer_hidden" type="checkbox">
+
+        <!-- ハンバーガーアイコン -->
+        <label for="drawer_input" class="drawer_open"><span></span></label>
+
+        <!-- メニュー -->
+        <nav class="gnav">
+          <ul>
+            <li><a href="/ecl_lp/" alt="TOPへのリンク"><span>TOP</span></a></li>
+            <li><a href="/ecl_lp/company_profile.html" alt="会社概要へのリンク"><span>会社概要</span></a></li>
+            <li><a href="/ecl_lp/business_content.html" alt="事業案内へのリンク"><span>事業案内</span></a></li>
+            <li><a href="/ecl_lp/for_companies.html" alt="企業様の方へのリンク"><span>企業様の方へ</span></a></li>
+            <li><a href="/ecl_lp/for_job_seekers.html" alt="求職者の方へのリンク"><span>求職者の方へ</span></a></li>
+            <li><a href="/ecl_lp/inquiry.html" alt="お問い合わせへのリンク"><span>お問い合わせ</span></a></li>
+            <li><a href="/ecl_lp/recruit.html" alt="採用情報へのリンク"><span>採用情報</span></a></li>
+          </ul>
+        </nav>
+      </div><!-- container -->
+    </header>
+
+
+    <!-- ヒーローセクション -->
+    <section class="hero">
+      <div class="container">
+        <!-- MV -->
+        <div class="mv mv_others"><img src="./assets/img/mv_others.png" alt="" loading="lazy"></div>
+        <!-- MV text -->
+        <div class="others_hero-text">
+          <div class="text">
+            <h2>採用情報</h2>
+            <div class="hr-line"></div>
+            <p><span>Recruit</span></p>
+          </div>
+        </div>
+      </div><!-- container -->
+    </section>
+
+    <!-- 採用情報 -->
+    <section class="recruit-entry">
+      <div class="container">
+        <p class="title">自由な発想を<br class="sp-disp">大切に。</p>
+        <div class="image-box">
+          <img src="./assets/img/recruit.png" alt="">
+        </div>
+        <p>主に人材派遣・人材紹介・外国人材支援サービスを行っており、各サービスに即戦力になる人材を求めています。<br>
+          また、弊社はグループ会社でもあり、それぞれが羽ばたける環境で自由に考え、自由に発言し、キャリアアップを目指しています。<br>
+          現在グループ会社として事業拡大展開を予定しており、あなたも一緒にキャリアアップを目指しませんか？</p>
+
+        <p>倉庫管理者</p>
+        <p>倉庫全体の施設・設備に関する管理・倉庫管理業務の運営管理・倉庫で働く従業員の管理業務です。</p>
+
+        <!-- 3カラム配置 -->
+        <div class="contents">
+          <!-- PC左  SP上 -->
+          <div class="content">
+            <div href="#" class="img-text-arrow">
+              <div class="img-box">
+                <div class="image">
+                  <img src="./assets/img/entry_job.png" alt="" loading="lazy">
+                </div>
+                <div class="message">
+                  <p>自分のライフスタイル<br>
+                    に合わせた<br>
+                    お仕事探しをサポート<br>
+                    致します！</p>
+                </div>
+              </div>
+              <div class="text-box">
+                <div class="index-2">
+                  <p><span>JOB SEEKER</span></p>
+                </div>
+                <p>お仕事を<br>お探しの方へ</p>
+              </div>
+              <a href="/ecl_lp/for_job_seekers.html" alt="求職者の方へのリンク" class="arrow">
+                <img src="./assets/img/arrow_blue.svg" alt="" loading="lazy">
+                <img src="./assets/img/arrow_white.svg" alt="" loading="lazy">
+              </a>
+            </div><!-- img-text-arrow -->
+          </div><!-- content -->
+
+          <!-- 中央  -->
+          <div class="content">
+            <div href="#" class="img-text-arrow">
+              <div class="img-box">
+                <div class="image">
+                  <img src="./assets/img/entry_enterprise.png" alt="" loading="lazy">
+                </div>
+                <div class="message">
+                  <p>必要な時に最適な<br>
+                    人材を！<br>
+                    企業の課題解決を実現<br>
+                    致します！
+                  </p>
+                </div>
+              </div>
+              <div class="text-box">
+                <div class="index-2">
+                  <p><span>AN ENTERPRISE</span></p>
+                </div>
+                <p>人材を<br>お探しの企業様へ</p>
+              </div>
+              <a href="/ecl_lp/for_companies.html" alt="企業様の方へのリンク" class="arrow">
+                <img src="./assets/img/arrow_blue.svg" alt="" loading="lazy">
+                <img src="./assets/img/arrow_white.svg" alt="" loading="lazy">
+              </a>
+            </div><!-- img-text-arrow -->
+          </div><!-- content -->
+
+          <!-- PC右  SP下 -->
+          <div class="content">
+            <!-- ontouchstart="" を追記 -->
+            <div class="img-text-arrow" ontouchstart="">
+              <div class="img-box">
+                <div class="image">
+                  <img src="./assets/img/entry_register.png" alt="" loading="lazy">
+                </div>
+                <div class="message">
+                  <p>好奇心を、仕事に。<br>
+                    自分らしく働ける場所<br>
+                    への第一歩に</p>
+                </div>
+              </div>
+              <div class="text-box">
+                <div class="index-2">
+                  <p><span>REGISTER</span></p>
+                </div>
+                <p>ご登録は<br>
+                  こちら</p>
+              </div>
+              <a href="#entry" alt="求人採用エントリーフォームへのリンク" class="arrow">
+                <img src="./assets/img/arrow_blue.svg" alt="" loading="lazy">
+                <img src="./assets/img/arrow_white.svg" alt="" loading="lazy">
+              </a>
+            </div><!-- img-text-arrow -->
+          </div><!-- content -->
+        </div><!-- contents -->
+      </div><!-- container -->
+    </section>
+
+
+    <!-- MW WP FORM -->
+    <div id="mw_wp_form_mw-wp-form-154" class="mw_wp_form mw_wp_form_input">
+      <form method="post" action="" enctype="multipart/form-data">
+        <section id="contact-form2" class="contact-form2">
+          <div class="container recruit-form">
+
+            <div id="entry" class="form-contents">
+              <h2>求人採用エントリーフォーム</h2>
+              <!-- お名前 -->
+              <div class="form-content">
+                <p><label for="name">お名前</label></p>
+                <div class="input-area">
+                  <input type="text" name="name" id="name" class="name" size="60" value="" />
+                </div>
+              </div>
+
+              <!-- カナ -->
+              <div class="form-content">
+                <p><label for="kana">フリガナ</label></p>
+                <div class="input-area">
+                  <input type="text" name="kana" id="kana" class="kana" size="60" value="" />
+                </div>
+              </div>
+
+              <!-- email -->
+              <div class="form-content">
+                <p><label for="email">メールアドレス</label></p>
+                <div class="input-area">
+                  <input type="email" name="email" id="email" class="email" size="60" value=""
+                    data-conv-half-alphanumeric="true" />
+                </div>
+              </div>
+
+              <!-- 性別 -->
+              <div class="form-content">
+                <p class="gender">性別</p>
+                <div class="input-area radio-input">
+                  <span class="mwform-radio-field horizontal-item">
+                    <label for="gender-1">
+                      <input type="radio" name="gender" value="男性" id="gender-1" class="gender" />
+                      <span class="mwform-radio-field-text">男性</span>
+                    </label>
+                  </span>
+                  <span class="mwform-radio-field horizontal-item">
+                    <label for="gender-2">
+                      <input type="radio" name="gender" value="女性" id="gender-2" class="gender" />
+                      <span class="mwform-radio-field-text">女性</span>
+                    </label>
+                  </span>
+                  <span class="mwform-radio-field horizontal-item">
+                    <label for="gender-3">
+                      <input type="radio" name="gender" value="どちらでもない" id="gender-3" class="gender" />
+                      <span class="mwform-radio-field-text">どちらでもない</span>
+                    </label>
+                  </span>
+
+                  <input type="hidden" name="__children[gender][]"
+                    value="{&quot;\u7537&quot;:&quot;\u7537&quot;,&quot;\u5973&quot;:&quot;\u5973&quot;,&quot;\u3069\u3061\u3089\u3067\u3082\u306a\u3044&quot;:&quot;\u3069\u3061\u3089\u3067\u3082\u306a\u3044&quot;}" />
+                </div><!-- radio-input -->
+              </div>
+
+              <!-- 職業 -->
+              <div class="form-content">
+                <p><label for="profession">現在又は以前の職業</label></p>
+                <div class="input-area">
+                  <input type="text" name="profession" id="profession" class="profession" size="60" value="" />
+                </div>
+              </div>
+
+              <!-- 希望職種 -->
+              <div class="form-content">
+                <p class="desired">希望職種</p>
+                <div class="input-area radio-input">
+                  <span class="mwform-radio-field horizontal-item">
+                    <label for="desired-1">
+                      <input type="radio" name="desired" value="倉庫管理者" id="desired-1" class="desired" />
+                      <span class="mwform-radio-field-text">倉庫管理者</span>
+                    </label>
+                  </span>
+                  <span class="mwform-radio-field horizontal-item">
+                    <label for="desired-2">
+                      <input type="radio" name="desired" value="営業" id="desired-2" class="desired" />
+                      <span class="mwform-radio-field-text">営業</span>
+                    </label>
+                  </span>
+                  <span class="mwform-radio-field horizontal-item">
+                    <label for="desired-3">
+                      <input type="radio" name="desired" value="営業事務" id="desired-3" class="desired" />
+                      <span class="mwform-radio-field-text">営業事務</span>
+                    </label>
+                  </span>
+                  <span class="mwform-radio-field horizontal-item">
+                    <label for="desired-4">
+                      <input type="radio" name="desired" value="軽作業" id="desired-4" class="desired" />
+                      <span class="mwform-radio-field-text">軽作業</span>
+                    </label>
+                  </span>
+                  <span class="mwform-radio-field horizontal-item">
+                    <label for="desired-5">
+                      <input type="radio" name="desired" value="その他" id="desired-5" class="desired" />
+                      <span class="mwform-radio-field-text">その他</span>
+                    </label>
+                  </span>
+
+                  <input type="hidden" name="__children[desired][]"
+                    value="{&quot;\u5009\u5eab\u7ba1\u7406\u8005&quot;:&quot;\u5009\u5eab\u7ba1\u7406\u8005&quot;,&quot;\u55b6\u696d&quot;:&quot;\u55b6\u696d&quot;,&quot;\u55b6\u696d\u4e8b\u52d9&quot;:&quot;\u55b6\u696d\u4e8b\u52d9&quot;,&quot;\u8efd\u4f5c\u696d&quot;:&quot;\u8efd\u4f5c\u696d&quot;,&quot;\u305d\u306e\u4ed6&quot;:&quot;\u305d\u306e\u4ed6&quot;}" />
+                </div><!-- radio-input -->
+              </div>
+
+              <!-- 経験・資格 -->
+              <div class="form-content">
+                <p><label for="qual_exp">経験・資格</label></p>
+                <div class="input-area">
+                  <textarea name="qual_exp" id="qual_exp" class="qual_exp" cols="50" rows="5"></textarea>
+                </div>
+              </div>
+
+              <!-- 希望勤務条件 -->
+              <div class="form-content">
+                <p><label for="conditions">希望勤務条件</label></p>
+                <div class="input-area">
+                  <textarea name="conditions" id="conditions" class="conditions" cols="50" rows="5"></textarea>
+                </div>
+              </div>
+
+              <!-- 職歴 -->
+              <div class="form-content">
+                <p><label for="history">職歴</label></p>
+                <div class="input-area">
+                  <textarea name="history" id="history" class="history" cols="50" rows="5"></textarea>
+                </div>
+              </div>
+
+              <!-- アピール -->
+              <div class="form-content">
+                <p><label for="appeal">アピール</label></p>
+                <div class="input-area">
+                  <textarea name="appeal" id="appeal" class="appeal" cols="50" rows="5"></textarea>
+                </div>
+              </div>
+
+              <!-- 確認ボタン -->
+              <div class="button">
+                <p>
+                  <button type="submit" name="submitConfirm" value="confirm">確認する
+                    <div class="arrow">
+                      <img src="./assets/img/arrow_blue.svg" alt="" loading="lazy">
+                      <img src="./assets/img/arrow_white.svg" alt="" loading="lazy">
+                  </button>
+                </p>
+              </div>
+            </div><!-- form-contents -->
+          </div><!-- container -->
+        </section>
+      </form>
+    </div><!-- end .mw_wp_form -->
+
+
+    <!-- 会社情報セクション -->
+    <section class="address">
+      <div class="container">
+        <div class="contents">
+          <p><span>ECL.inc</span></p>
+          <p>ＥＣＬ株式会社</p>
+          <address>大阪府堺市堺区築港八幡町1-171MFLP堺102</address>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./assets/js/ecl.js">
+
+    </script>
+    <footer>
+      <small>Copyright 2023 ＥＣＬ株式会社</small>
+    </footer>
+  </main>
+</body>

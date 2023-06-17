@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- cssファイルはfunction.phpで指定 -->
+  <link rel="stylesheet" href="./assets/css/ecl.css">
+  <link rel="stylesheet" href="./assets/css/ecl_sub.css">
+  <link rel="shortcut icon" href="">
+  <!--
+     <?php
+  wp_enqueue_script('jquery');
+  wp_head();
+  ?>
+  -->
+  <!-- adobe fonts 日本語-->
+  <script>
+    (function (d) {
+      var config = {
+        kitId: 'tmc5zkz',
+        scriptTimeout: 3000,
+        async: true
+      },
+        h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
+
+  <!-- adobe fonts 英文-->
+  <script>
+    (function (d) {
+      var config = {
+        kitId: 'isz2nam',
+        scriptTimeout: 3000,
+        async: true
+      },
+        h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
+
+
+</head>
+<!-- <?php get_header() ?> -->
+
+<main>
+  <!-- ヘッダー -->
+  <header>
+    <div class="container">
+      <!-- ロゴ -->
+      <div class="logo">
+        <a href="/ecl_lp/">
+          <h1><img src="./assets/img/logo.jpg" alt="株式会社ECL" loading="lazy"></h1>
+        </a>
+      </div>
+
+      <!-- グローバルナビ -->
+
+      <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+      <input id="drawer_input" class="drawer_hidden" type="checkbox">
+
+      <!-- ハンバーガーアイコン -->
+      <label for="drawer_input" class="drawer_open"><span></span></label>
+
+      <!-- メニュー -->
+      <nav class="gnav">
+        <ul>
+          <li><a href="/ecl_lp/" alt="TOPへのリンク"><span>TOP</span></a></li>
+          <li><a href="/ecl_lp/company_profile.html" alt="会社概要へのリンク"><span>会社概要</span></a></li>
+          <li><a href="/ecl_lp/business_content.html" alt="事業案内へのリンク"><span>事業案内</span></a></li>
+          <li><a href="/ecl_lp/for_companies.html" alt="企業様の方へのリンク"><span>企業様の方へ</span></a></li>
+          <li><a href="/ecl_lp/for_job_seekers.html" alt="求職者の方へのリンク"><span>求職者の方へ</span></a></li>
+          <li><a href="/ecl_lp/inquiry.html" alt="お問い合わせへのリンク"><span>お問い合わせ</span></a></li>
+          <li><a href="/ecl_lp/recruit.html" alt="採用情報へのリンク"><span>採用情報</span></a></li>
+        </ul>
+      </nav>
+    </div><!-- container -->
+  </header>
+
+
+  <!-- ヒーローセクション -->
+  <section class="hero">
+    <div class="container">
+      <!-- MV -->
+      <div class="mv mv_others">
+        <img src="./assets/img/mv_gaiyou_naiyou.png" alt="林立する都会のビル群" loading="lazy">
+      </div>
+      <!-- MV text -->
+      <div class="others_hero-text">
+        <div class="text">
+          <h2>事業内容</h2>
+          <div class="hr-line"></div>
+          <p><span>Business content</span></p>
+        </div>
+      </div>
+    </div><!-- container -->
+  </section>
+
+
+  <section class="business_content">
+    <div class="container">
+      <p>
+        企業が求める人材は、業種・業態・課題・目標など様々な要因によって常に変化しています。ECLは企業のニーズを深く理解し『人材派遣・人材紹介・グローバル人材・アウトソーシング』の4つのソリューションを展開しております。状況に合わせて、人材サービスの種類や規模を組み合わせて提供することが可能です。御社の抱える課題を多角的にアプローチ・スピード感、そして全力で解決致します。
+      </p>
+      <!-- 3カラム配置 -->
+      <div class="contents">
+        <!-- 上 -->
+        <div class="content">
+          <div>
+            <img src="./assets/img/bc_haken.png" alt="" loading="lazy">
+          </div>
+          <div>
+            <h3>人材派遣</h3>
+            <p>
+            <p>今後は更に展開をしていく予定です。<br>
+              グループ会社の所有するロジスティックスでの知識や経験を活かして人材派遣サービスが行えるのが強みとなっております。<br>
+              手厚いフォロー、素早く人材を確保しご提案致します。<br>
+              又、企業様の課題解決の実現を図っています！</p>
+            </p>
+          </div>
+        </div>
+        <!-- 中央 -->
+        <div class="content">
+          <div>
+            <img src="./assets/img/bc_shokai.png" alt="" loading="lazy">
+          </div>
+          <div>
+            <h3>人材紹介</h3>
+            <p>素早く丁寧な対応で求職者と企業様をマッチング致します。<br>
+              倉庫内作業経験者が多数在籍！！<br>
+              アフターフォロー体制もあるので、ご安心下さい。<br>
+              グループ会社が営むロジスティックス業務での知識や経験を活かした人材をご紹介が可能です！</p>
+          </div>
+        </div>
+        <!-- 下 -->
+        <div class="content">
+          <div>
+            <img src="./assets/img/bc_forign.png" alt="" loading="lazy">
+          </div>
+          <div>
+            <h3>外国人材</h3>
+            <p>
+              各種在留資格の人材派遣・人材紹介、就労支援サービスを行っております。<br>
+              又、ビザ申請・更新等の登録支援サービスも同時に行っております。外国人の方を多数雇用しており、グループ会社のノウハウを生かし在留資格取得・研修・生活支援・就業支援等と外国人材の就労における課題解決を担っています。
+            </p>
+          </div>
+        </div>
+      </div><!-- contents -->
+    </div><!-- container -->
+    </div>
+
+
+
+  </section>
+
+  <!-- recruit セクション -->
+  <section class="recruit decoration">
+    <div class="container">
+      <div class="index">
+        <h2>採用情報</h2>
+      </div>
+      <p><span>RECRUIT</span></p>
+      <div class="contents">
+        <!--
+          <img src="./assets/img/recruit.jpg" alt="" loading="lazy">-->
+        <a href="/ecl_lp/recruit.html" class="button">
+          Read more
+          <div class="arrow">
+            <img src="./assets/img/arrow_blue.svg" alt="" loading="lazy">
+            <img src="./assets/img/arrow_white.svg" alt="" loading="lazy">
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 会社情報セクション -->
+  <section class="address decoration">
+    <div class="container">
+      <div class="contents">
+        <p><span>ECL.inc</span></p>
+        <p>ＥＣＬ株式会社</p>
+        <address>大阪府堺市堺区築港八幡町1-171MFLP堺102</address>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./assets/js/ecl.js">
+
+  </script>
+  <footer>
+    <small>Copyright 2023 ＥＣＬ株式会社</small>
+  </footer>
+</main>

@@ -1,0 +1,1699 @@
+@charset "utf-8";
+
+:root {
+  --main-color: #0035ff;
+  --bk-color: #a2afe4;
+  --text-color: #000000;
+  --main-reverse-color: #ffffff;
+  --marker-color: #f0f8ff;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* リンクタグの設定 */
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  box-shadow: none;
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+a:active {
+  box-shadow: 0 5px 10px black;
+  transform: translate(0, -5px);
+  opacity: 0.75;
+}
+
+/* 文字に対する共通設定 */
+p,
+h1,
+h2,
+h3,
+dl,
+dt,
+dd,
+label,
+button,
+small {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* 入力フォームのデフォルトスタイル初期化 */
+input,
+button,
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+  margin: 0 auto;
+  /* iPhone Safari 文字サイズ自動調整機能への対応 */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 各セクション・コンテナ幅の設定 */
+.hero,
+.features,
+.ask,
+.customers,
+.contact-form {
+  max-width: 100vw;
+}
+
+.detail,
+.utilizations,
+.location,
+.approaches {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.container {
+  max-width: min(95%, 1100px);
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+@media screen and (max-width:768px) {
+  .container {
+    max-width: 100vw;
+    padding: 50px 0;
+  }
+}
+
+/* PC/SPで表示非表示の切り替え */
+.sp-disp {
+  display: none;
+}
+
+@media screen and (max-width:768px) {
+  .sp-disp {
+    display: block;
+  }
+
+  .pc-disp {
+    display: none;
+  }
+}
+
+/* imgタグに対する共通クラス */
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+
+/********** ヘッダー **********/
+header {
+  /* レイアウトに関する記述 */
+  display: flex;
+  max-width: 1400px;
+  height: 100px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 45px 0 45px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 -6px 3px -5px var(--bk-color) inset;
+
+  /* ヘッダー追従に関する記述 */
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.logo img {
+  width: 75px;
+  height: auto;
+  /* 承認後追加 */
+  vertical-align: middle;
+  aspect-ratio: 512/477;
+}
+
+.right-side {
+  display: flex;
+}
+
+.right-side div {
+  display: flex;
+  align-items: center;
+  height: 52px;
+}
+
+/* imgに対して幅と高さを明示する */
+.right-side img {
+  width: min(100%, 40px);
+  height: min(100%, 40px);
+  aspect-ratio: 40/40;
+  object-fit: cover;
+}
+
+.right-side p {
+  margin-left: 14px;
+  line-height: 1;
+  /* white-space: nowrap 追加 */
+  white-space: nowrap;
+}
+
+.right-side .telephone {
+  margin: 0 min(3.2vw, 35px) 0 0;
+}
+
+.right-side .telephone p {
+  font-family: "游明朝体", "Yu Mincho  Demibold", YuMincho Demibold, "ヒラギノ明朝 Pro",
+    "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-size: 40px;
+  /* 文字間隔が詰まりすぎなので -0.1rem --> normal */
+  letter-spacing: normal;
+  color: var(--main-color);
+}
+
+/* SP表示のみ電話番号をクリックすると電話発信させる */
+.right-side a:first-of-type {
+  pointer-events: none;
+  cursor: default;
+}
+
+.right-side .inquiry {
+  /* padding: 0 25px 0 25px ;*/
+  padding: 0 min(3.2vw, 36px) 0 min(3.2vw, 36px);
+  background-color: var(--main-color);
+}
+
+.right-side .inquiry p {
+  font-size: 24px;
+  color: var(--main-reverse-color);
+}
+
+@media screen and (max-width:768px) {
+  header {
+    padding: 0 clamp(2.6vw, 10px, 4vw);
+  }
+
+  .right-side {
+    flex-direction: column;
+  }
+
+  .right-side p {
+    margin-left: 5px;
+  }
+
+  /* SP表示はボタンに見立てる */
+  .right-side .inquiry {
+    background-color: var(--main-color);
+  }
+
+  /* SP表示のみ電話番号をクリックすると電話発信させる */
+  .right-side a:first-of-type {
+    pointer-events: auto;
+  }
+
+  .right-side img {
+    width: 32px;
+    height: auto;
+  }
+
+  .right-side a:first-of-type {
+    margin: 0 0 5px 0;
+  }
+
+  .right-side .telephone {
+    margin: 0;
+    padding: 0 10px 0 10px;
+    height: 40px;
+    /* width 追加 */
+    width: 250px;
+    background-color: var(--marker-color);
+  }
+
+  .right-side .telephone div,
+  .right-side .inquiry div {
+    /* 親要素幅250pxからロゴ、padding、marginを引く */
+    width: calc(250px - 32px - 20px - 10px);
+    height: 40px;
+    margin: 0 0 0 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .right-side .telephone p {
+    font-size: min(7.0vw, 28px);
+    letter-spacing: 0.045rem;
+    /* 最後の文字の字間を右側のネガティブマージンで打ち消す */
+    margin: 0 -0.045rem 0 0;
+  }
+
+  /* ハイフンの左右は広めの字間に */
+  .right-side .telephone p span {
+    letter-spacing: 0.1rem;
+  }
+
+  .right-side .inquiry {
+    height: 40px;
+    margin: 0;
+    padding: 0 10px 0 10px;
+    background-color: var(--main-color);
+    /* width 追加 */
+    width: 250px;
+  }
+
+  .right-side .inquiry p {
+    font-size: min(6.2vw, 24px);
+    letter-spacing: 0.5rem;
+    /* 最後の文字の字間を右側のネガティブマージンで打ち消す */
+    margin: 0 -0.5rem 0 0;
+  }
+}
+
+
+/********** ヒーローセクション **********/
+.hero {
+  width: 100%;
+  height: 600px;
+  background: no-repeat url(../img/mv.jpg);
+  background-size: cover;
+  background-position: center;
+  overflow: auto;
+
+}
+
+.hero .container {
+  padding: 0;
+}
+
+.catchphrase {
+  padding: 80px 0 0 50px;
+}
+
+.black-bg {
+  margin-top: 10px;
+  padding-left: 15px;
+  height: min(6vw, 75px);
+  width: min(calc(14 * min(5vw, 64px)), calc(14 * 64px - 30px));
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.black-bg p {
+  font-size: min(5vw, 64px);
+  line-height: 1.25;
+  letter-spacing: -2px;
+  color: var(--main-reverse-color);
+}
+
+@media screen and (max-width:768px) {
+  .hero {
+    background: url(../img/mv_sp.jpg) bottom no-repeat;
+    background-size: cover;
+  }
+
+  .catchphrase-sp {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .catchphrase-sp p {
+    display: inline-block;
+    margin: 10px 0 0 0;
+    padding: 0 10px;
+    font-size: 42px;
+    color: var(--main-reverse-color);
+    /* 背景設定変更 */
+    width: calc(42px * 7 + 10px);
+    line-height: 1.25;
+    white-space: nowrap;
+    background: linear-gradient(transparent 0%,
+        transparent 4%,
+        rgba(0, 0, 0, 0.75) 4%,
+        rgba(0, 0, 0, 0.75) 96%,
+        transparent 96%,
+        transparent 100%);
+  }
+
+  /* フレーズの最初のみ上部margin無し */
+  .catchphrase-sp p:first-of-type {
+    margin: 0;
+  }
+}
+
+
+
+/********** 倉庫の詳細 **********/
+.detail h2 {
+  font-size: min(5.5vw, 60px);
+  margin: 15px 0;
+  text-align: center;
+}
+
+.h2-large {
+  font-size: min(10vw, 96px);
+  font-weight: bold;
+}
+
+.h2-middle {
+  font-size: min(8vw, 80px);
+  font-weight: bold;
+}
+
+.detail-contents {
+  display: flex;
+}
+
+.detail-img {
+  width: 50%;
+  margin-right: 14px;
+  /* CLS対応 */
+  height: 354px;
+}
+
+.detail-img img {
+  width: min(100%, 536px);
+  height: min(100%, 354px);
+  aspect-ratio: 536/354;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+.detail-text {
+  display: flex;
+  flex-direction: column;
+  width: min(50%, 550px);
+  height: min(100%, 354px);
+}
+
+.detail-text h3 {
+  font-size: 42px;
+  line-height: 46px;
+  margin-bottom: 27px;
+  /* 中心から表の見出しまで35px　-　左ボーダーライン11px */
+  padding-left: calc(35px - 11px);
+  border-left: 11px solid black;
+  vertical-align: middle;
+  /* ブレイクポイント近くで桁落ちするため */
+  white-space: nowrap;
+}
+
+.detail-contents dl>div {
+  display: flex;
+  flex-wrap: wrap;
+  height: 70px;
+}
+
+.detail-contents dl {
+  border-bottom: 1px solid black;
+}
+
+.detail-contents dt,
+.detail-contents dd {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.detail-contents dt {
+  display: flex;
+  align-items: center;
+  width: 125px;
+  padding: 0 0 0 min(2vw, 25px);
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.detail-contents dd {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 125px);
+  padding: 0 min(2vw, 20px) 0 0;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+}
+
+@media screen and (max-width:768px) {
+  .detail h2 {
+    font-size: 60px;
+    margin: 0;
+    line-height: 1.25;
+  }
+
+  .h2-large {
+    font-size: 96px;
+  }
+
+  .h2-middle {
+    font-size: 80px;
+  }
+
+  .detail-text h3 {
+    font-size: 42px;
+  }
+
+  .detail-contents {
+    flex-direction: column;
+    padding: 0 max(10px, 2%);
+  }
+
+  .detail-img {
+    width: 100%;
+    height: auto;
+    margin: 25px 0 0 0;
+  }
+
+  .detail-img img {
+    width: 100%;
+  }
+
+  .detail-text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .detail-text h3 {
+    margin: 25px 0 10px 0;
+  }
+
+  .detail-contents dl>div {
+    height: 70px;
+  }
+
+
+  .detail-text dt,
+  .detail-text dd {
+    font-size: clamp(18px, 2.8vw, 20px);
+    line-height: 1;
+  }
+
+  .detail-contents dt {
+    /* 比率または固定幅 */
+    width: 30%;
+  }
+
+  .detail-contents dd {
+    width: calc(100% - 30%);
+  }
+}
+
+
+/********** 特徴 **********/
+.features {
+  padding: 100px 0;
+  background-color: var(--bk-color);
+}
+
+.features .container {
+  padding: 30px 0;
+  background-color: #ffffff;
+}
+
+
+/* H2見出し共通のカッコ */
+.decoration {
+  text-align: center;
+}
+
+.decoration h2 {
+  display: inline-block;
+  position: relative;
+  font-size: 42px;
+  color: var(--main-color);
+  line-height: 1;
+
+}
+
+.decoration h2:before,
+.decoration h2:after {
+  position: absolute;
+  content: '';
+}
+
+.decoration h2:after {
+  top: 0;
+  left: 0;
+  /* ネガティブマージンで位置調整 */
+  margin: -12px 0 0 -32px;
+  width: 32px;
+  height: 32px;
+  border-top: 6px solid var(--main-color);
+  border-left: 6px solid var(--main-color);
+}
+
+.decoration h2:before {
+  right: 0;
+  bottom: 0;
+  /* ネガティブマージンで位置調整 */
+  margin: 0 -32px -12px 0;
+  width: 32px;
+  height: 32px;
+  border-right: 6px solid var(--main-color);
+  border-bottom: 6px solid var(--main-color);
+}
+
+/* H2見出し共通のカッコ ここまで*/
+
+
+/* 3カラム配置 */
+.feature-contents {
+  display: flex;
+  margin-top: 30px;
+  padding: 0 2.5px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+  margin: 0 17px;
+  position: relative;
+}
+
+/* 縦の区切り線基準 */
+.feature::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: min(88%, 220px);
+  height: clamp(140px, 17.5vw, 220px);
+  background-color: var(--main-color);
+  position: absolute;
+  top: 30px;
+  right: -17px;
+}
+
+/* 右側の区切り線は不要 */
+.feature-contents div:nth-child(3n)::after {
+  content: none;
+}
+
+.feature h3 {
+  margin-top: 28px;
+  font-size: min(1.823vw, 20px);
+  line-height: 1.6rem;
+  text-align: center;
+}
+
+/* imgに対して幅と高さを明示する */
+.feature img {
+  width: min(100%, 330px);
+  height: min(100%, 200px);
+  aspect-ratio: 330/200;
+  object-fit: cover;
+  align-self: center;
+}
+
+.features-text {
+  margin: 50px 0 0 19.5px;
+  font-size: min(1.823vw, 16px);
+  line-height: 1.6rem;
+  letter-spacing: -0.03rem;
+  text-align: left;
+}
+
+@media screen and (max-width:768px) {
+  .features {
+    padding: 50px max(10px, 2%);
+    position: static;
+  }
+
+  .feature {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .feature h3 {
+    font-size: 20px;
+  }
+
+  .features-text {
+    font-size: 16px;
+  }
+
+  /* 縦の区切り線を消す */
+  .feature::after {
+    content: none;
+  }
+
+  /* 伸長する横の区切り線 */
+  .feature .hr-line {
+    width: 70%;
+    margin: 20px 15%;
+    height: 1px;
+    border-top: 1px var(--main-color) solid;
+  }
+
+  /* 横の区切り線基準 */
+  .feature h3 {
+    margin: 15px 0;
+    position: relative;
+  }
+
+  .feature-contents {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .features-text {
+    margin: 10px 5px 0 5px;
+    letter-spacing: normal;
+  }
+
+  .features-text p {
+    text-align: justify;
+  }
+}
+
+
+
+/********** 活用 **********/
+.utilizations h2 {
+  margin: 20px 0 0 0;
+}
+
+/* 2カラム配置 */
+.utilization-contents {
+  margin-top: 30px;
+  display: flex;
+}
+
+.utilization-contents .utilization:first-child {
+  padding-right: 30px;
+}
+
+.utilization-contents .utilization:last-child {
+  padding-left: 30px;
+}
+
+.utilization {
+  width: 50%;
+}
+
+.utilization h3 {
+  margin-top: 36px;
+  font-size: 20px;
+  line-height: 1.6rem;
+  text-align: left;
+  font-feature-settings: "palt";
+
+}
+
+/* マーカー線 */
+.utilization h3 span {
+  background: linear-gradient(transparent 55%,
+      var(--marker-color) 55%,
+      var(--marker-color) 90%,
+      transparent 90%);
+}
+
+.utilization p {
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.6rem;
+  text-align: left;
+}
+
+.utilization-contents .utilization:last-child p {
+  letter-spacing: -0.02rem;
+}
+
+@media screen and (max-width:768px) {
+  .utilizations {
+    padding: 0 max(10px, 2%);
+  }
+
+  .utilization-contents {
+    flex-direction: column;
+  }
+
+  .utilization {
+    width: 100%;
+  }
+
+  .utilization img {
+    aspect-ratio: 520 / 280;
+    object-fit: cover;
+  }
+
+  .utilization-contents .utilization:first-child {
+    padding-right: 0;
+  }
+
+  .utilization-contents .utilization:last-child {
+    margin: 80px 0 0 0;
+    padding-left: 0;
+  }
+
+  .utilization p {
+    letter-spacing: normal;
+    text-align: justify;
+  }
+}
+
+
+/********** 問い合わせ **********/
+.ask {
+  background-color: var(--bk-color);
+}
+
+.ask .container {
+  padding: 80px 0;
+}
+
+/* containerとコンテンツ幅が異なるための設定 */
+.ask-contents {
+  position: relative;
+  max-width: 900px;
+  height: 210px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 4px solid var(--main-color);
+}
+
+/* 見出し */
+.ask h3 {
+  margin: 20px 0;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.ask p {
+  line-height: 1;
+}
+
+.ask-content {
+  max-width: 340px;
+  max-height: 50px;
+}
+
+/* ドロップシャドウ付与のためFlexに。
+    レスポンシブ対応にはFlexを付けていた。
+*/
+.ask-contents .content {
+  display: flex;
+}
+
+/* 問い合わせボタン */
+.ask .inquiry {
+  width: min(33vw, 340px);
+  height: 50px;
+  /* ドロップシャドウ付与のためbottom 21.5-->0へ変更 */
+  margin: 0 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+}
+
+/* padding max(10px,2%) で追加 */
+.ask p {
+  white-space: nowrap;
+}
+
+.ask .inquiry p {
+  font-size: min(2.5vw, 24px);
+  color: var(--main-reverse-color);
+}
+
+.ask a {
+  margin: 0 0 20px 0;
+}
+
+/* 電話番号 */
+/* SP表示のみ電話番号をクリックすると電話発信させる */
+.ask div:last-of-type>a {
+  pointer-events: none;
+  cursor: default;
+}
+
+.ask .telephone {
+  width: min(33vw, 340px);
+  height: 50px;
+  /* ドロップシャドウ付与のためtop 0-->21.5へ変更 */
+  /*margin: 21.5px 0 21.5px 0;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--marker-color);
+}
+
+.ask .telephone img {
+  width: min(4vw, 36px);
+  height: auto;
+}
+
+.ask .telephone p {
+  font-family: "游明朝体", "Yu Mincho  Demibold", YuMincho Demibold, "ヒラギノ明朝 Pro",
+    "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  font-size: min(4.1vw, 36px);
+  /* 実機だと文字間隔が詰まりすぎなので -0.1rem --> normal */
+  letter-spacing: normal;
+  color: var(--main-color);
+  /* 追加 */
+  margin: 0 0 0 5px;
+}
+
+/* 男性と女性の写真 */
+.ask .man-img {
+  position: absolute;
+  width: min(27vw, 245px);
+  height: auto;
+  /* ボーダーラインと画像は2px重ねる */
+  bottom: -2px;
+  left: 16px;
+}
+
+.ask .woman-img {
+  position: absolute;
+  width: min(23.8vw, 215px);
+  height: auto;
+  /* ボーダーラインと画像は2px重ねる */
+  bottom: -2px;
+  right: 20px;
+}
+
+@media screen and (max-width:768px) {
+  .ask {
+    padding: 0 max(10px, 2%);
+  }
+
+  .ask .container {
+    padding: 50px 0;
+  }
+
+  .ask h3 {
+    margin: 21.5px 0;
+  }
+
+  .ask-contents {
+    width: min(100%, 500px);
+    height: auto;
+  }
+
+  .ask-contents .content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 21.5px 0;
+    padding: 0 5%;
+  }
+
+  .ask .inquiry,
+  .ask .telephone {
+    width: min(56vw, 280px);
+    margin: 0;
+    padding: 0 max(10px, 2%);
+  }
+
+  .ask .inquiry p {
+    font-size: min(4.8vw, 20px);
+  }
+
+  /* SP表示のみ電話番号をクリックすると電話発信させる */
+  .ask div:last-of-type>a {
+    pointer-events: auto;
+  }
+
+  /* 折り返し 7.5vw --> 6.5vw */
+  .ask .telephone p {
+    font-size: min(6.5vw, 30px);
+  }
+
+  .ask .telephone img {
+    width: min(7.5vw, 30px);
+    height: auto;
+  }
+
+  .ask-img {
+    height: auto;
+    width: auto;
+    margin: 0 3% 0 0;
+  }
+
+  .ask .man-img,
+  .ask .woman-img {
+    position: static;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    /* 横位置は中央/縦位置は5px下げる */
+    object-position: 50% 5px;
+    border: 0.5px solid var(--bk-color);
+    border-radius: 9999px;
+  }
+}
+
+
+/********** 所在地 **********/
+.location .container {
+  max-width: 1400px;
+}
+
+.location h2 {
+  margin: 20px 0 0 0;
+}
+
+.location .location-contents {
+  margin-top: 30px;
+}
+
+.location address {
+  margin: 15px 0 35px 150px;
+  font-style: normal;
+}
+
+.location p {
+  line-height: 1.6rem;
+}
+
+@media screen and (max-width:768px) {
+  .location {
+    padding: 0 max(10px, 2%);
+  }
+
+  .location address {
+    margin: 15px 0 0 0;
+    font-style: normal;
+  }
+}
+
+
+/********** お客様の声 **********/
+.customers {
+  padding: 100px 0;
+  background-color: var(--bk-color);
+}
+
+.customers .container {
+  /*height: 550px;*/
+  /* 3カラム配置した時の全幅から左右マージン分差し引く */
+  padding: 30px calc(20px - 17px);
+  background-color: white;
+}
+
+/* 3カラム表示 */
+.customer-contents {
+  display: flex;
+  margin-top: 30px;
+}
+
+/* 縦の区切り線基準 */
+.customer {
+  display: flex;
+  flex-direction: column;
+  width: 33.3%;
+  margin: 0 17px;
+  position: relative;
+}
+
+.customer::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 400px;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 41px;
+  right: -17px;
+}
+
+/* 右側の区切り線は不要 */
+.customer-contents div:nth-child(3n)::after {
+  content: none;
+}
+
+.customer .customer-img {
+  height: auto;
+  width: auto;
+  text-align: center;
+}
+
+.customer img {
+  max-width: 280px;
+  max-height: 210px;
+  object-fit: cover;
+}
+
+.customer h3,
+.customer p {
+  line-height: 1.6rem;
+}
+
+.customer .bk-box {
+  display: flex;
+  padding: 0 min(2vw, 12px);
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--marker-color);
+}
+
+.customer h3 {
+  font-size: min(2.3vw, 20px);
+  text-align: center;
+  letter-spacing: min(-0.01vw, -0.05rem);
+  background-color: var(--marker-color);
+}
+
+.customer p {
+  font-size: min(1.823vw, 16px);
+}
+
+.customer p:first-of-type {
+  text-align: right;
+  margin: 20px 20px 20px 0;
+}
+
+.customer p:last-of-type {
+  text-align: justify;
+  letter-spacing: -0.02rem;
+}
+
+@media screen and (max-width:768px) {
+  .customers {
+    padding: 50px max(10px, 2%);
+  }
+
+  .customers .container {
+    width: min(100%, 550px);
+    /* 左右4.5vw->max(12px, 2%) */
+    padding: 4.5vw max(12px, 2%);
+    height: auto;
+  }
+
+  .customers h2 {
+    margin: 4.5vw 0 0 0;
+  }
+
+  .customer-contents {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .customer {
+    width: 100%;
+    margin: 0 0 20px 0;
+    position: static;
+  }
+
+  /* 縦の区切り線を消す */
+  .customer::after {
+    content: none;
+  }
+
+  .customer h3 {
+    font-size: 20px;
+    text-align: center;
+    /* padding max(10px,2%) で追加 */
+    white-space: nowrap;
+  }
+
+  .customer p {
+    font-size: 16px;
+  }
+
+  .customer .hr-line {
+    width: 70%;
+    margin: 40px 15% 20px 15%;
+    height: 1px;
+    border-top: 1px var(--main-color) solid;
+  }
+
+  .customer-contents .customer:last-child {
+    margin: 0;
+  }
+
+  .customer h3 {
+    margin: 5px 0;
+  }
+
+  .customer p:first-of-type {
+    /* bottom 20px -> 10px */
+    margin: 10px 0 10px 0;
+    text-align: center;
+  }
+}
+
+/********** 品質向上の取り組み **********/
+.approaches .container {
+  height: auto;
+}
+
+.approache-contents {
+  /* PC表示はGridレイアウト */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 30px 40px;
+  margin-top: 30px;
+}
+
+.approache {
+  display: flex;
+  flex-direction: column;
+}
+
+.approache .approache-img {
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
+.approache img {
+  width: 340px;
+  height: 210px;
+  object-fit: cover;
+}
+
+.approache h3 {
+  margin: 15px 0 0 0;
+  line-height: 1;
+  text-align: center;
+}
+
+@media screen and (max-width:768px) {
+  .approaches .container {
+    height: auto;
+  }
+
+  .approache-contents {
+    /* SP表示はFlexレイアウト */
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .approaches .container {
+    height: auto;
+    padding: 30px 0;
+  }
+
+  .approaches {
+    padding: 50px max(10px, 2%);
+  }
+
+  .approache {
+    width: 100%;
+    height: auto;
+    margin: 0 0 60px 0;
+  }
+
+  .approache img {
+    height: 100%;
+    width: 100%;
+    /* 拡大表示の時に縦横比が崩れる対処 */
+    aspect-ratio: 340/210;
+    object-fit: cover;
+  }
+
+
+  .approache h3 {
+    margin: 10px 0 0 0;
+  }
+
+  .approache-contents .approache:last-child {
+    margin: 0;
+  }
+}
+
+/********** お問い合わせフォーム **********/
+.contact-form {
+  background-color: var(--bk-color);
+}
+
+.contact-form .container {
+  padding: 80px 0 60px 0;
+}
+
+.contact-form h2 {
+  font-size: 42px;
+  text-align: center;
+  margin: 0 0 45px 0;
+  line-height: 1;
+}
+
+.mw_wp_form_input .attention,
+.mw_wp_form_complete.attention {
+  display: none;
+}
+
+
+.mw_wp_form_preview .attention {
+  display: block;
+  font-size: 32px;
+  text-align: center;
+  margin: 0 0 45px 0;
+  line-height: 1;
+  color: var(--main-color);
+}
+
+.contact-form .attention::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: url(../img/exclamation.svg) no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+
+.form-content {
+  display: flex;
+  margin: 0 0 40px 0;
+  /* center --> flex-start に変更 */
+  align-items: flex-start;
+}
+
+.form-content p {
+  line-height: 1;
+}
+
+.form-content label {
+  display: inline-block;
+  width: 150px;
+  font-size: 20px;
+  letter-spacing: -0.1rem;
+  /* WP Form による調整　margin-top --> (<span>必須5px) + 3.5px; */
+  margin: calc(5px + 3.5px) 0 0 0;
+}
+
+/* 必須の文字仕様と背景色 */
+.form-content span {
+  display: inline-block;
+  /* WP Form による調整　margin-top: 5px; */
+  margin: 5px 15px 0 15px;
+  padding: 5px 10px;
+  white-space: nowrap;
+  font-size: 20px;
+  background-color: var(--main-color);
+  color: white;
+  line-height: 1;
+}
+
+
+.form-content .input-area {
+  width: 100%;
+}
+
+.form-content input {
+  width: 100%;
+  padding: 7.5px;
+  font-size: 20px;
+  background-color: white;
+  border: 1px var(--main-color) solid;
+}
+
+.form-content textarea {
+  width: 100%;
+  height: 200px;
+  padding: 7.5px;
+  font-size: 20px;
+  background-color: white;
+  border: 1px var(--main-color) solid;
+  /* chromeだと文字が小さくなるためfont-familyを指定 */
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+.contact-form .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form .button button {
+  width: 400px;
+  height: 80px;
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  line-height: 1;
+  color: white;
+  background-color: var(--main-color);
+}
+
+/* MW WP Form のバリデーションチェックのエラー表示 */
+.mw_wp_form .error {
+  font-size: 15px !important;
+  font-weight: bold;
+  background-color: var(--bk-color);
+}
+
+.mw_wp_form .error::before {
+  content: '※';
+}
+
+.form-content:not(:nth-of-type(4)) .error {
+  /* input との位置調整でmargin-topをネガティブに */
+  /* ネガティブマージンでエラー表示が増えた分打ち消す */
+  margin: 2px 0 -25px 0;
+}
+
+.form-content:nth-of-type(4) .error {
+  /* textarea との位置調整でmargin-topをネガティブに */
+  /* ネガティブマージンでエラー表示が増えた分打ち消す */
+  margin: -5px 0 -25px 0;
+}
+
+/* MW WP Form のボタンの記述 */
+.contact-form .send-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-form .send-back .button button {
+  width: 200px;
+  height: 80px;
+  margin: 0 10px 10px 10px;
+  font-size: 24px;
+  line-height: 1;
+  white-space: nowrap;
+  color: white;
+  background-color: var(--main-color);
+}
+
+/* reCAPTCHA for MW WP Form のバッジ位置の記述 */
+.grecaptcha-badge {
+  bottom: 0.5vh !important;
+  /* z-indexを0にしないとホバー時に動かない */
+  z-index: 0 !important;
+}
+
+/* To Top プラグイン */
+#to_top_scrollup {
+  /*  ボタンの大きさを可変 */
+  font-size: min(8.5vw, 42px) !important;
+  width: min(8.5vw, 42px) !important;
+  height: min(8.5vw, 42px) !important;
+
+  /* reCAPTCHAのバッジとTopに戻るボタンの位置調整 */
+  bottom: 105px !important;
+}
+
+/* reCAPTCHA for MW WP Form のエラーメッセージの記述 */
+.mw_wp_form .contact-form .container~.error {
+  margin: -40px 0 0 0;
+  padding: 0 6% 40px;
+  text-align: center;
+}
+
+
+/*
+* reCAPTCHA バッジのレスポンシブ対応
+*/
+@media screen and (max-width:768px) {
+  body {
+    background-color: white;
+  }
+
+  /* 背景色が無色のところは白色とz-index付与 */
+  .hero,
+  .utilizations,
+  .detail,
+  .location,
+  .approaches,
+  footer {
+    background-color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* 背景色があるところはz-indexのみ */
+  .features,
+  .ask,
+  .customers {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* フォーム入力のセクションではバッジ表示 */
+  .contact-form {
+    position: relative;
+    z-index: 0;
+  }
+
+  /*
+  *  reCAPTCHAのバッジとトップボタンを上下入れ替え 
+  *  reCAPTCHA for MW WP Form のバッジ位置の記述 
+  */
+  .grecaptcha-badge {
+    bottom: 105px !important;
+    /* z-indexを0にしないとホバー時に動かない */
+    z-index: 0 !important;
+  }
+
+  /* Topに戻るボタンの位置調整 */
+  #to_top_scrollup {
+    right: 2px !important;
+    bottom: 1.2px !important;
+  }
+
+}
+
+
+/* MW WP Form の確認画面の記述 */
+.mw_wp_form_preview .input-area {
+  /* .form-content label と同じ高さ */
+  /* WP Form による調整　margin-top --> (<span>必須</spam>5px) + 3.5px; */
+  margin: calc(5px + 3.5px) 0 0 0;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* MW WP Form の送信完了画面の記述 */
+.contact-end {
+  background-color: var(--bk-color);
+}
+
+.contact-end p {
+  /* pタグの共通設定 */
+  display: block;
+  font-size: 20px;
+  line-height: 2.5;
+  text-align: center;
+}
+
+.contact-end .send-end {
+  /* 送信完了はmargin 0 */
+  margin: 0;
+  font-size: 42px;
+  color: var(--main-color);
+  line-height: 1;
+}
+
+.contact-end .thanks {
+  /* 送信完了から離れる */
+  margin: 60px 0 0 0;
+}
+
+.contact-end .number {
+  /* 受付番号 .thanks に近づく */
+  margin: 20px 0 0 0;
+}
+
+.contact-end .number span {
+  margin: 0 20px;
+  color: var(--main-color);
+}
+
+.contact-end .gratitude {
+  margin: 20px 0 0 0;
+}
+
+/* トップページへ戻る */
+.contact-end .goto-home p {
+  margin: 40px 0 0 0;
+  text-align: center;
+}
+
+.contact-end .goto-home a:link {
+  text-decoration: underline;
+}
+
+.contact-end .goto-home a:visited {
+  text-decoration: underline;
+}
+
+
+/* 各フォーム部品の動き */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: 2px solid #000;
+}
+
+.contact-form .button button:hover {
+  cursor: pointer;
+  box-shadow: none;
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.contact-form .button button:active {
+  box-shadow: 0 5px 10px black;
+  transform: translate(0, -5px);
+  opacity: 0.75;
+}
+
+
+
+@media screen and (max-width:768px) {
+
+  /**/
+  .contact-form .container {
+    padding-top: 60px;
+  }
+
+  .contact-form h2 {
+    margin-top: -20px;
+    padding: 60px 0 0 0;
+  }
+
+  .form-content {
+    width: 100%;
+    padding: 0 max(10px, 2%);
+    flex-wrap: wrap;
+  }
+
+  .mw_wp_form_preview .attention {
+    letter-spacing: min(-0.01vw, -0.05rem);
+  }
+
+  .input-area {
+    width: 100%;
+  }
+
+  .form-content input,
+  .form-content textarea {
+    width: 100%;
+    margin: 5px 0 0 0;
+  }
+
+  .contact-form .button button {
+    width: 100%;
+    height: 80px;
+    padding: 0 30px;
+    font-size: 24px;
+  }
+
+  /* MW WP Form のボタンの記述 */
+  .contact-form .send-back {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .contact-form .send-back .button button {
+    width: 33vw;
+    padding: 0 10px;
+  }
+
+  /* MW WP Form の確認画面の記述 */
+  .mw_wp_form_preview .container {
+    padding: 60px max(10px, 2%);
+  }
+
+  /* MW WP Form の送信完了画面の記述 */
+  .contact-end {
+    padding: 0 max(10px, 2%);
+  }
+
+  .contact-end .container {
+    /* 100vhからheaderとfooterとメッセージ の高さを引いて2等分*/
+    padding: max(60px, calc((100vh - 600px) / 2)) 0;
+  }
+
+  .contact-end p {
+    /* pタグの共通設定 */
+    font-size: min(3.74vw, 20px);
+    line-height: 2;
+    letter-spacing: min(-0.01vw, -0.05rem);
+  }
+
+  .contact-end .send-end {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .contact-end .thanks {
+    margin: 40px 0 0 0;
+    text-align: center;
+  }
+
+  .contact-end .gratitude {
+    margin: 15px 0 0 0;
+    text-align: start;
+  }
+}
+
+
+/********** フッター **********/
+footer {
+  max-width: 1400px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+footer small {
+  /* 文字位置調整用
+  width: 340px;
+  padding: 0 5px;
+  */
+  /* 文字の折り返し調整 */
+  font-size: min(5vw, 20px);
+  line-height: 1;
+  letter-spacing: -0.01rem;
+  text-align: center;
+}
+
+@media screen and (max-width:768px) {
+  footer small {
+    /* 文字の大きさ調整 min(5vw, 20px)->min(4.5vw, 20px) */
+    font-size: min(4.5vw, 20px);
+  }
+}
+
+/********** 404 error **********/
+.error h2,
+.error p {
+  text-align: center;
+}
+
+.error {
+  background-color: var(--bk-color);
+}
+
+.error h2 {
+  margin: 0 0 40px 0;
+  color: var(--main-color);
+}
